@@ -1,0 +1,115 @@
+/* Dashboard.css */
+.dashboard {
+  position: relative; /* allows video to be positioned behind */
+  padding: 2rem;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 1;
+}
+
+/* Background video styles */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fills without distortion */
+  z-index: -1; /* sends video behind content */
+}
+
+.dashboard h2 {
+  font-size: 2rem;
+  color: #f5f7fa;
+  margin-bottom: 1.5rem;
+}
+
+.stats {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: rgba(173, 139, 115, 0.85); /* semi-transparent so video is visible */
+  color: #fff;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Footer Section */
+.dashboard-footer {
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 40px 20px;
+  margin-top: 50px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-logo img {
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.footer-logo p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.footer-links {
+  display: flex;
+  gap: 50px;
+}
+
+.footer-links h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.footer-links p {
+  margin: 4px 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.footer-links p:hover {
+  color: #E3CAA5;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+  font-size: 13px;
+  color: #aaa;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
