@@ -15,7 +15,7 @@ function EditProfile() {
         const fetchProfile = async () => {
             try {
                 const token = localStorage.getItem("token");
-                const res = await axios.get("http://localhost:5000/api/admin/profile", {
+                const res = await axios.get("https://stockify-backend-w3xb.onrender.com/api/admin/profile", {
                     headers: { Authorization: `Bearer ${token}` },
                 });
 
@@ -36,7 +36,7 @@ function EditProfile() {
         e.preventDefault();
         try {
             const token = localStorage.getItem("token");
-            await axios.put("http://localhost:5000/api/admin/profile", 
+            await axios.put("https://stockify-backend-w3xb.onrender.com/api/admin/profile", 
                 { name, phone },
                 { headers: { Authorization: `Bearer ${token}` } }
             );

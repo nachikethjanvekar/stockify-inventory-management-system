@@ -8,7 +8,7 @@ function Products() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/products")
+    axios.get("https://stockify-backend-w3xb.onrender.com/api/products")
       .then(res => setProducts(res.data))
       .catch(err => console.error("Error fetching products:", err));
   }, []);
@@ -20,7 +20,7 @@ function Products() {
 const handleDelete = async (id) => {
   if (window.confirm("Are you sure you want to delete this product ? ")) {
     try {
-      await axios.delete(`http://localhost:5000/api/products/${id}`);
+      await axios.delete(`https://stockify-backend-w3xb.onrender.com/api/products/${id}`);
       setProducts(products.filter(product => product._id !== id));
       alert("Product Deleted Successfully!");
     } catch (error) {

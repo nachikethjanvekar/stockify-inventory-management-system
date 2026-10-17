@@ -12,7 +12,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/dashboard");
+        const res = await axios.get("https://stockify-backend-w3xb.onrender.com/api/dashboard");
         setData(res.data);
       } catch (error) {
         console.error("Error fetching dashboard data:", error);

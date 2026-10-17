@@ -17,7 +17,7 @@ function EditProduct() {
   });
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/products/${id}`, {
+    axios.get(`https://stockify-backend-w3xb.onrender.com/api/products/${id}`, {
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -38,7 +38,7 @@ function EditProduct() {
     e.preventDefault();
     const token = localStorage.getItem("token");
     try {
-      await axios.put(`http://localhost:5000/api/products/${id}`, product, {
+      await axios.put(`https://stockify-backend-w3xb.onrender.com/api/products/${id}`, product, {
         headers: {
             Authorization: `Bearer ${token}`
         }

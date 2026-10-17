@@ -14,7 +14,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/admin/register", {
+      await axios.post("https://stockify-backend-w3xb.onrender.com/api/admin/register", {
          name,
          email,
          phone,

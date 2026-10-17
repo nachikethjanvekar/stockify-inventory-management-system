@@ -10,10 +10,10 @@ const Orders = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const productRes = await axios.get("http://localhost:5000/api/products");
+        const productRes = await axios.get("https://stockify-backend-w3xb.onrender.com/api/products");
         setProducts(productRes.data);
 
-        const orderRes = await axios.get("http://localhost:5000/api/orders");
+        const orderRes = await axios.get("https://stockify-backend-w3xb.onrender.com/api/orders");
         setOrders(orderRes.data);
       } catch (err) {
         console.error("Error fetching data:", err);
@@ -36,9 +36,9 @@ const Orders = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/orders", { products: selectedProducts });
+      await axios.post("https://stockify-backend-w3xb.onrender.com/api/orders", { products: selectedProducts });
       setSelectedProducts([{ productId: "", quantity: 1 }]);
-      const orderRes = await axios.get("http://localhost:5000/api/orders");
+      const orderRes = await axios.get("https://stockify-backend-w3xb.onrender.com/api/orders");
       setOrders(orderRes.data);
       alert("Order placed!");
     } catch (err) {
@@ -50,7 +50,7 @@ const Orders = () => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this order ?")) {
       try {
-        await axios.delete(`http://localhost:5000/api/orders/${id}`);
+        await axios.delete(`https://stockify-backend-w3xb.onrender.com/api/orders/${id}`);
         setOrders(orders.filter(order => order.id !== id));
         alert("Order Deleted Successfully");
       } catch (error) {
@@ -62,7 +62,7 @@ const Orders = () => {
 
   const handleReceivedToggle = async (id) => {
     try {
-      await axios.put(`http://localhost:5000/api/orders/received/${id}`);
+      await axios.put(`https://stockify-backend-w3xb.onrender.com/api/orders/received/${id}`);
       // Re-fetch orders OR Update Locally
       const updated = orders.map(order => 
         order._id === id ? { ...order, received: !order.received }: order);

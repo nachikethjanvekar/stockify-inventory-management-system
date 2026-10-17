@@ -8,7 +8,7 @@ function Categories() {
 
   const fetchCategories = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/categories");
+      const res = await axios.get("https://stockify-backend-w3xb.onrender.com/api/categories");
       setCategories(res.data);
     } catch (err) {
       console.error("Error fetching categories:", err);
@@ -18,7 +18,7 @@ function Categories() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/categories", { name });
+      await axios.post("https://stockify-backend-w3xb.onrender.com/api/categories", { name });
       setName("");
       fetchCategories();
     } catch (err) {
