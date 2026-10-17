@@ -1,30 +1,48 @@
-# Inventory Management System
+# Stockify – Inventory Management System
 
-A full-stack web application designed to manage inventory through a user-friendly interface. This project demonstrates full-stack web development using React, Node.js, Express.js, and MongoDB.
+A full-stack inventory management web application built using the MERN stack. Stockify provides an admin interface to manage products, categories, orders, and inventory-related information.
 
-## Overview
+## 🚀 Live Demo
 
-The Inventory Management System provides a web interface for managing inventory-related data. It includes an admin authentication system and a frontend connected to a backend API.
+- **Frontend:** [Stockify – Live Application](https://stockify-frontend-b2wb.onrender.com)
+- **Backend:** [Stockify – Backend Service](https://stockify-backend-w3xb.onrender.com)
+- **GitHub Repository:** [Stockify – Source Code](https://github.com/nachikethjanvekar/stockify-inventory-management-system)
 
-## Tech Stack
+> **Note:** The backend is hosted on Render's free tier and may take a little time to respond after a period of inactivity.
 
-- **Frontend:** React.js, CSS
-- **Backend:** Node.js, Express.js
-- **Database:** MongoDB Atlas
-- **Authentication:** JSON Web Tokens (JWT)
-- **API Communication:** HTTP requests
+## 📌 Overview
 
-## Features
+Stockify is designed to simplify inventory management through a user-friendly web interface. The frontend communicates with a REST API built using Node.js and Express.js, while MongoDB Atlas stores the application's data.
+
+The project demonstrates full-stack development concepts, including authentication, database integration, API communication, and deployment.
+
+## ✨ Features
 
 - Admin registration and login
 - Inventory dashboard
-- Product and category management
+- Product management
+- Category management
 - Order management
 - Profile management
-- MongoDB database integration
+- MongoDB Atlas database integration
 - REST API-based frontend and backend communication
+- JWT-based authentication
 
-## Project Structure
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| React.js | Frontend user interface |
+| CSS | Styling and layout |
+| Node.js | Backend runtime |
+| Express.js | REST API development |
+| MongoDB Atlas | Cloud database |
+| Mongoose | MongoDB object modeling |
+| JSON Web Tokens (JWT) | Authentication |
+| Git & GitHub | Version control |
+| Render | Application deployment |
+
+## 📂 Project Structure
 
 ```text
 inventory-management/
@@ -43,26 +61,22 @@ inventory-management/
 └── README.md
 ```
 
-*Note: The folder structure above is representative. Your actual project may contain additional files and folders.*
+## ⚙️ Installation and Setup
 
-## Prerequisites
+### Prerequisites
 
-Before running the project, make sure you have installed:
+Install the following before running the project locally:
 
 - [Node.js and npm](https://nodejs.org/)
 - [Git](https://git-scm.com/)
-- A [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) account and database
-
-## Installation and Setup
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) account and database
 
 ### 1. Clone the repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-cd inventory-management
+git clone https://github.com/nachikethjanvekar/stockify-inventory-management-system.git
+cd stockify-inventory-management-system
 ```
-
-Replace `YOUR_GITHUB_REPOSITORY_URL` with your repository's URL.
 
 ### 2. Install backend dependencies
 
@@ -73,7 +87,7 @@ npm install
 
 ### 3. Configure environment variables
 
-Create a `.env` file inside the `backend` directory with the following variables:
+Create a `.env` file inside the `backend` directory:
 
 ```env
 MONGO_URI=your_mongodb_atlas_connection_string
@@ -81,23 +95,23 @@ JWT_SECRET=your_strong_secret_key
 PORT=5000
 ```
 
-Replace the placeholder values with your own MongoDB Atlas connection string and a strong, private JWT secret.
+Replace the placeholder values with your own credentials. Keep this file private and never commit it to GitHub.
 
 Ensure your MongoDB Atlas database user and network access settings are configured correctly.
 
-### 4. Start the backend server
+### 4. Start the backend
 
 From the `backend` directory, run:
 
 ```bash
-npm start
+node index.js
 ```
 
-The backend should start on port `5000` after successfully connecting to MongoDB Atlas.
+The backend will connect to MongoDB Atlas and start on port `5000`, unless another port is configured.
 
 ### 5. Install frontend dependencies
 
-Open a **new terminal** in the project root and run:
+Open a new terminal in the project root and run:
 
 ```bash
 cd frontend
@@ -114,41 +128,47 @@ The React application will normally be available at:
 
 http://localhost:3000
 
-Keep both the backend and frontend terminals running while using the application.
+Keep both terminals running while using the locally hosted application.
 
-## Environment Variables
+**Note:** If the frontend is configured to use the deployed Render API, update its API base URL to `http://localhost:5000` when you want to run the backend locally.
+
+## 🔐 Environment Variables
 
 | Variable | Description |
 |---|---|
 | `MONGO_URI` | MongoDB Atlas connection string |
-| `JWT_SECRET` | Secret used for JWT authentication |
-| `PORT` | Backend server port |
+| `JWT_SECRET` | Private secret used for JWT authentication |
+| `PORT` | Port on which the backend server runs |
 
-## Security
+## 🌐 Deployment
 
-- Never commit your actual `.env` file or database credentials.
-- Keep your JWT secret private and use a strong value.
-- Do not expose database passwords in source code or public repositories.
+Stockify is deployed using Render:
 
-## Learning Outcomes
+- The React frontend is hosted as a Static Site.
+- The Node.js and Express.js backend is hosted as a Web Service.
+- MongoDB Atlas provides cloud database storage.
+
+## 📚 Learning Outcomes
 
 This project provides practical experience with:
 
 - React frontend development
-- Backend API development using Express.js
+- REST API development using Express.js
 - MongoDB Atlas integration
-- Authentication and protected routes
-- Frontend-backend communication
+- JWT-based authentication
+- Frontend and backend integration
+- Environment variable configuration
 - Git and GitHub version control
+- Full-stack application deployment
 
-## Future Improvements
+## 🔒 Security
 
-- Deploy the application for public access.
-- Add automated tests and stronger input validation.
-- Improve inventory reporting and low-stock alerts.
-- Enhance error handling and user experience.
+- Never commit `.env` files or database credentials.
+- Use a strong, private JWT secret.
+- Keep database passwords out of source code.
+- Validate user input and protect sensitive API routes.
 
-## Author
+## 👨‍💻 Author
 
 **Nachiketh Janvekar**
 
@@ -156,4 +176,4 @@ Full-Stack Web Development Project
 
 ---
 
-If you find this project useful, feel free to explore the code and suggest improvements.
+If you find this project useful, feel free to explore the source code and suggest improvements.
